@@ -10,8 +10,6 @@ const path = require('path');
 
 // Admin login
 router.get('/login', (req, res) => {
-  console.log('hello');
-  console.log(path.join(__dirname, 'views'));
 
   res.render('admin/login');
 });
