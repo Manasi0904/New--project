@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <p>Total Cars: <%= totalCars %></p>
+  <form action="/admin/cars" method="POST">
+    <input type="text" name="carName" placeholder="Car Name" required>
+    <input type="number" name="manufacturingYear" placeholder="Manufacturing Year" required>
+    <input type="number" name="price" placeholder="Price" required>
+    <button type="submit">Add Car</button>
+  </form>
+
+  <h2>Car List</h2>
+  <ul>
+    <% cars.forEach(car => { %>
+      <li>
+        <%= car.carName %> - <%= car.manufacturingYear %> - $<%= car.price %>
+        <form action="/admin/cars/<%= car._id %>/update" method="POST">
+          <input type="text" name="carName" value="<%= car.carName %>" required>
+          <input type="number" name="manufacturingYear" value="<%= car.manufacturingYear %>" required>
+          <input type="number" name="price" value="<%= car.price %>" required>
+          <button type="submit">Update</button>
+        </form>
+        <form action="/admin/cars/<%= car._id %>/delete" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
