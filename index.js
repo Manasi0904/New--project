@@ -9,9 +9,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const path = require('path');
 
+console.log('process.env.MONGODB_URL', process.env.MONGODB_UR);
 mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  // useNewUrlParser: true,
+  // useUnifiedTopology: true,
 });
 
 // Set the correct views directory
