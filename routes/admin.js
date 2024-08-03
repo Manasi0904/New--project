@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const { authenticateToken, authorizeRole } = require('../middleware/auth');
 const JWT_SECRET = 'manasi';//replace with env latter
 const Car = require('../models/car');
+const path = require('path');
 
 // Admin login
 router.get('/login', (req, res) => {
