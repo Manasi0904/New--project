@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 
 // Set the correct views directory
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
